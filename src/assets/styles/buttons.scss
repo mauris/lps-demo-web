@@ -1,0 +1,11 @@
+.btn {
+  &.btn-primary {
+    background: #00A8C6;
+    border-color: #007990;
+  }
+  .btn[disabled] {
+    background: #FCFCFC;
+    color: #999;
+    opacity: 0.45;
+  }
+}

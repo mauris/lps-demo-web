@@ -1,0 +1,55 @@
+.navbar-default {
+  color: #FFF;
+  background: #48CF7C;
+  border-color: #489F7C;
+
+
+  .navbar-brand:focus,
+      .navbar-brand:active,
+      .navbar-brand:hover {
+    color: #489F7C;
+  }
+
+  .navbar-nav > li > a,
+      .navbar-brand {
+    outline: none;
+  }
+
+  .navbar-nav > li > a,
+      .navbar-text,
+      .navbar-brand {
+    color: #FFF;
+  }
+
+  .navbar-nav > li > a:hover {
+    color: #489D8C;
+    background: #CFF7FF;
+  }
+
+  .navbar-nav > .active {
+    a, a:focus, a:hover {
+      background: #489F7C;
+      color: #EEE;
+    }
+  }
+
+  .navbar-toggle {
+    border: none;
+    .icon-bar {
+      background: #FFF;
+    }
+
+    &:focus, &:hover {
+      background: none;
+    }
+  }
+}
+
+.nav-pills > li.active{
+  & > a, & > a:focus {
+    background: #48CF7C;
+  }
+  & > a:hover {
+    background: #489F7C;
+  }
+}
