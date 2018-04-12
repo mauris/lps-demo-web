@@ -7,6 +7,8 @@ import { AppComponent } from './components';
 
 import { HomePage } from './pages';
 
+import { AppLPSTimelineComponent } from './components';
+
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -21,6 +23,7 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   declarations: [
     AppComponent,
+    AppLPSTimelineComponent,
     HomePage
   ]
 })

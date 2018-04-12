@@ -1,0 +1,20 @@
+.timeline {
+  overflow: auto;
+
+  table {
+    @extend .table;
+    @extend .table-striped;
+
+    width: auto;
+    max-width: none;
+
+    th {
+      font-weight: bold;
+      border-right: 1px solid #ccc;
+    }
+
+    td > div {
+      width: 200px;
+    }
+  }
+}

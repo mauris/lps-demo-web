@@ -2,8 +2,17 @@ page-toolbar(active="home")
 
 .container
   .row
-    .col-md-3
-      h3 Hello there!
-      p Welcome to LPS Demo
+    .col-md-2
+      h1 Hello there!
+      p Welcome to LPS JavaScript Implementation Demo. Enter the LPS source code on the right and press execute to run the LPS program.
+    .col-md-10.col-top-spacer
+      .form-group
+        button.btn.btn-default((click)="execute()") Run
+      .form-group
+        textarea.textarea-code.form-control([(ngModel)]="source", rows=20)
+
+  .row
+    .col-md-10.col-md-offset-2
+      lps-timeline([result]="timeline")
 
 page-footer

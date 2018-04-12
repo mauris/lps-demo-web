@@ -1,0 +1,21 @@
+div.timeline
+  table
+    tr
+      th Time
+      td(*ngFor="let time of timeLabel")
+        span {{time}}
+    tr
+      th Events
+      td(*ngFor="let set of events")
+        div(*ngFor="let literal of set")
+          span {{literal}}
+    tr
+      th Fluents
+      td(*ngFor="let set of fluents")
+        div(*ngFor="let literal of set")
+          span {{literal}}
+    tr
+      th Actions
+      td(*ngFor="let set of actions")
+        div(*ngFor="let literal of set")
+          span {{literal}}
