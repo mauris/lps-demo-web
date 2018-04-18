@@ -4,15 +4,20 @@ page-toolbar(active="home")
   .row
     .col-md-2
       h1 Hello there!
-      p Welcome to LPS JavaScript Implementation Demo. Enter the LPS source code on the right and press execute to run the LPS program.
+      p Welcome to LPS JavaScript Implementation Demo. Enter the LPS source code on the right and press "Run" to run the LPS program.
+
+      h4 Example Programs
+      p Below are some preloaded example LPS programs that you can run with this implementation demonstration program.
+
+      div.col-top-spacer(*ngFor="let example of preloadedPrograms; let i = index")
+        button.btn.btn-default.btn-block((click)="loadProgram(i)") {{example}}
+
     .col-md-10.col-top-spacer
       .form-group
         button.btn.btn-default((click)="execute()") Run
       .form-group
         textarea.textarea-code.form-control([(ngModel)]="source", rows=20)
 
-  .row
-    .col-md-10.col-md-offset-2
       lps-timeline([result]="timeline")
 
 page-footer
