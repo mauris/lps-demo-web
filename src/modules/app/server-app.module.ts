@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { ServerModule } from '@angular/platform-server';
+import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
 import { AppComponent } from './components';
 import { AppModule } from './app.module';
-import { BrowserModule } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
 
 @NgModule({
   bootstrap: [
@@ -11,10 +11,9 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     NoopAnimationsModule,
-    BrowserModule.withServerTransition({
-      appId: 'lps-demo'
-    }),
+    ServerTransferStateModule,
     ServerModule,
+    ModuleMapLoaderModule,
     AppModule
   ]
 })
