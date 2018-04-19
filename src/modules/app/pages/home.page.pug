@@ -13,10 +13,14 @@ page-toolbar(active="home")
         button.btn.btn-default.btn-block((click)="loadProgram(i)") {{example}}
 
     .col-md-10.col-top-spacer
+      .form-group(*ngIf="error")
+        p.lead Error
+        p {{error}}
       .form-group
-        button.btn.btn-default((click)="execute()") Run
+        p(*ngIf="loading") Loading...
+        button.btn.btn-default((click)="execute()", *ngIf="!loading") Run
       .form-group
-        textarea.textarea-code.form-control([(ngModel)]="source", rows=20)
+        textarea.textarea-code.form-control([(ngModel)]="source", rows=20, ng-disabled="loading")
 
       lps-timeline([result]="timeline")
 

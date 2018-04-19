@@ -10,6 +10,8 @@ const RESULT_KEY = makeStateKey<Array<string>>('cache');
 })
 export class HomePage implements OnInit {
   private source: String;
+  private error: String = '';
+  private loading: boolean = false;
   private timeline: Array<any> = [];
   private preloadedPrograms: Array<string> = [];
 
@@ -32,32 +34,62 @@ export class HomePage implements OnInit {
     this.transferState.onSerialize(RESULT_KEY, () => {
       return this.preloadedPrograms;
     });
+    this.loading = true;
     this.http
       .get(process.env.API_ENDPOINT + '/lps/examples')
       .map((response: Response) => {
         let data = response.json();
         this.preloadedPrograms = data.result;
+        this.loading = false;
       })
       .subscribe();
   }
 
   loadProgram(id: Number) {
+    this.error = '';
+    this.loading = true;
     this.http
       .get(process.env.API_ENDPOINT + '/lps/examples/' + id)
       .map((response: Response) => {
-        let data = response.json();
-        this.source = data.result;
+        return response.json();
       })
-      .subscribe();
+      .subscribe(
+        (data) => {
+          this.source = data.result;
+          this.loading = false;
+        },
+        (err) => {
+          this.loading = false;
+          let data = err.json();
+          if (data.status !== 'error') {
+            return;
+          }
+          this.error = data.msg;
+        }
+      );
   }
 
   execute() {
+    this.error = '';
+    this.loading = true;
     this.http
       .post(process.env.API_ENDPOINT + '/lps/execute', { source: this.source })
       .map((response: Response) => {
-        let data = response.json();
-        this.timeline = data.result;
+        return response.json();
       })
-      .subscribe();
+      .subscribe(
+        (data) => {
+          this.timeline = data.result;
+          this.loading = false;
+        },
+        (err) => {
+          this.loading = false;
+          let data = err.json();
+          if (data.status !== 'error') {
+            return;
+          }
+          this.error = data.msg;
+        }
+      );
   }
 }
