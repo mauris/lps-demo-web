@@ -7,7 +7,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 export function main() {
-  return platformBrowserDynamic().bootstrapModule(BrowserAppModule);
+  platformBrowserDynamic()
+    .bootstrapModule(BrowserAppModule)
+    .catch(err => console.log(err));
 }
 document.addEventListener('DOMContentLoaded', main, false);
 
