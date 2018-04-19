@@ -14,8 +14,7 @@ module.exports = {
       'ng2-file-upload',
       'angular2-moment',
       'ngx-toastr',
-      'angulartics2',
-      /preboot/
+      'angulartics2'
     ]
   })],
   entry: root('./src/main.server.ts'),
