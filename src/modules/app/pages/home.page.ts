@@ -72,6 +72,7 @@ export class HomePage implements OnInit {
   execute() {
     this.error = '';
     this.loading = true;
+    this.timeline = [];
     this.http
       .post(process.env.API_ENDPOINT + '/lps/execute', { source: this.source })
       .map((response: Response) => {
