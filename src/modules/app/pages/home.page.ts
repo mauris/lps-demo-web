@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
   private loading: boolean = false;
   private timeline: Array<any> = [];
   private preloadedPrograms: Array<string> = [];
+  private programCache: Object = {};
 
   constructor(
     private title: Title,
@@ -47,6 +48,10 @@ export class HomePage implements OnInit {
 
   loadProgram(id: Number) {
     this.error = '';
+    if (this.programCache[String(id)] !== undefined) {
+      this.source = this.programCache[String(id)];
+      return;
+    }
     this.loading = true;
     this.http
       .get(process.env.API_ENDPOINT + '/lps/examples/' + id)
@@ -56,6 +61,7 @@ export class HomePage implements OnInit {
       .subscribe(
         (data) => {
           this.source = data.result;
+          this.programCache[String(id)] = this.source;
           this.loading = false;
         },
         (err) => {
