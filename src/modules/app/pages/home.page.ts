@@ -11,6 +11,7 @@ const RESULT_KEY = makeStateKey<Array<string>>('cache');
 export class HomePage implements OnInit {
   private source: String;
   private error: String = '';
+  private runTime: String = '';
   private loading: boolean = false;
   private timeline: Array<any> = [];
   private preloadedPrograms: Array<string> = [];
@@ -79,6 +80,7 @@ export class HomePage implements OnInit {
     this.error = '';
     this.loading = true;
     this.timeline = [];
+    this.runTime = '';
     this.http
       .post(process.env.API_ENDPOINT + '/lps/execute', { source: this.source })
       .map((response: Response) => {
@@ -87,6 +89,7 @@ export class HomePage implements OnInit {
       .subscribe(
         (data) => {
           this.timeline = data.result;
+          this.runTime = data.time;
           this.loading = false;
         },
         (err) => {

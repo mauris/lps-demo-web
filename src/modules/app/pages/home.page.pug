@@ -23,5 +23,6 @@ page-toolbar(active="home")
         textarea.textarea-code.form-control([(ngModel)]="source", rows=20, ng-disabled="loading")
 
       lps-timeline([result]="timeline")
+      span(*ngIf="runTime"): small Executed on server in {{runTime}}
 
 page-footer
