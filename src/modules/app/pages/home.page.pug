@@ -1,13 +1,14 @@
 page-toolbar(active="home")
 
-.container
+.container-fluid
   .row
     .col-md-2
       h1 Hello there!
       p Welcome to LPS JavaScript Implementation Demo. Enter the LPS source code on the right and press "Run" to run the LPS program.
+      p: small The LPS program execution currently happens on the server-side. Browser-side execution is possible, but will only be demonstrated once the project becomes open source.
 
       h4 Example Programs
-      p Below are some preloaded example LPS programs that you can run with this implementation demonstration program.
+      p Below are some preloaded LPS programs that you can load and get started.
 
       div.col-top-spacer(*ngFor="let example of preloadedPrograms; let i = index")
         button.btn.btn-default.btn-block((click)="loadProgram(i)") {{example}}
