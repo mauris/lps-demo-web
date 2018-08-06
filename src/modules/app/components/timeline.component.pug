@@ -8,12 +8,12 @@ div.timeline(*ngIf="result.length > 0")
       th Events
       td.timeline-events(*ngFor="let set of events")
         div(*ngFor="let literal of set")
-          span &bull; {{literal}}
+          span([title]="literal") &bull; {{ (literal.length > 32) ? ((literal | slice:0:29) + '...') : literal }}
     tr
       th Actions
       td.timeline-actions(*ngFor="let set of actions")
         div(*ngFor="let literal of set")
-          span &bull; {{literal}}
+          span([title]="literal") &bull; {{ (literal.length > 32) ? ((literal | slice:0:29) + '...') : literal }}
     tr
       th Fluents
       td.timeline-fluents(*ngFor="let set of fluents; let i = index")

@@ -23,6 +23,13 @@
       div {
         position: relative;
         left: -108px;
+        height: 24px;
+        width: 200px;
+        overflow: hidden;
+
+        span {
+          white-space: nowrap;
+        }
       }
     }
 
