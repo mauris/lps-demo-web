@@ -3,7 +3,7 @@ div.timeline(*ngIf="result.length > 0")
     tr
       th Time
       td(*ngFor="let time of timeLabel")
-        span &dots; {{time}}
+        span &bull; {{time}}
     tr
       th Events
       td.timeline-events(*ngFor="let set of events")
