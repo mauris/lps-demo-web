@@ -30,12 +30,21 @@ export class HomePage implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       this.preloadedPrograms = this.transferState.get(RESULT_KEY, []);
       this.transferState.remove(RESULT_KEY);
+
+      if (this.preloadedPrograms.length === 0) {
+        this.loadProgramList();
+      }
+
       return;
     }
 
     this.transferState.onSerialize(RESULT_KEY, () => {
       return this.preloadedPrograms;
     });
+    this.loadProgramList();
+  }
+
+  loadProgramList() {
     this.loading = true;
     this.http
       .get(process.env.API_ENDPOINT + '/lps/examples')

@@ -6,7 +6,7 @@ import { TransferHttpCacheModule } from '@nguniversal/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './components';
 
-import { HomePage } from './pages';
+import { HomePage, AboutPage } from './pages';
 
 import { AppLPSTimelineComponent } from './components';
 
@@ -22,13 +22,15 @@ import { ToastrModule } from 'ngx-toastr';
     TransferHttpCacheModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot([
-      { path: '', component: HomePage, pathMatch: 'full'}
+      { path: '', component: HomePage, pathMatch: 'full'},
+      { path: 'about', component: AboutPage, pathMatch: 'full'}
     ])
   ],
   declarations: [
     AppComponent,
     AppLPSTimelineComponent,
-    HomePage
+    HomePage,
+    AboutPage
   ]
 })
 export class AppModule {}
