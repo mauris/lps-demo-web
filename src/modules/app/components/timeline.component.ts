@@ -13,6 +13,7 @@ export class AppLPSTimelineComponent implements OnChanges {
   private fluents: Array<any> = [];
   private actions: Array<any> = [];
   private events: Array<any> = [];
+  private overlappingFluents: Array<number> = [];
 
   constructor(
     private router: Router
@@ -25,12 +26,14 @@ export class AppLPSTimelineComponent implements OnChanges {
     this.fluents = [];
     this.actions = [];
     this.events = [];
+    this.overlappingFluents = [];
 
     this.result.forEach((timeStep) => {
       this.timeLabel.push(timeStep.time);
       this.fluents.push(timeStep.fluents);
       this.events.push(timeStep.observations);
       this.actions.push(timeStep.actions);
+      this.overlappingFluents.push(timeStep.overlappingFluents);
     })
   }
 }

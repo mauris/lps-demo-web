@@ -20,8 +20,15 @@
     td.timeline-events, td.timeline-actions {
       div {
         position: relative;
-        left: -100px;
+        left: -108px;
       }
+    }
+
+    .timeline-fluent-box {
+      background: #d8fff3;
+      border: 1px solid #fff;
+      height: 22px;
+      padding: 2px 5px;
     }
   }
 }
