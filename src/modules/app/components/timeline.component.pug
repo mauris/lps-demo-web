@@ -3,19 +3,19 @@ div.timeline(*ngIf="result.length > 0")
     tr
       th Time
       td(*ngFor="let time of timeLabel")
-        span {{time}}
+        span &dots; {{time}}
     tr
       th Events
-      td(*ngFor="let set of events")
-        div(*ngFor="let literal of set")
-          span {{literal}}
-    tr
-      th Fluents
-      td(*ngFor="let set of fluents")
+      td.timeline-events(*ngFor="let set of events")
         div(*ngFor="let literal of set")
           span {{literal}}
     tr
       th Actions
-      td(*ngFor="let set of actions")
+      td.timeline-actions(*ngFor="let set of actions")
+        div(*ngFor="let literal of set")
+          span {{literal}}
+    tr
+      th Fluents
+      td.timeline-fluents(*ngFor="let set of fluents")
         div(*ngFor="let literal of set")
           span {{literal}}

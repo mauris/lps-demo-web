@@ -16,5 +16,12 @@
     td > div {
       width: 200px;
     }
+
+    td.timeline-events, td.timeline-actions {
+      div {
+        position: relative;
+        left: -100px;
+      }
+    }
   }
 }
