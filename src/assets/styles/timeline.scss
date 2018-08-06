@@ -5,6 +5,8 @@
     @extend .table;
     @extend .table-striped;
 
+    margin-bottom: 0;
+
     width: auto;
     max-width: none;
 
@@ -25,10 +27,14 @@
     }
 
     .timeline-fluent-box {
-      background: #d8fff3;
+      background: #fff2a0;
       border: 1px solid #fff;
-      height: 22px;
+      height: 24px;
       padding: 2px 5px;
+
+      &:hover {
+        background: #ffed7f;
+      }
     }
   }
 }

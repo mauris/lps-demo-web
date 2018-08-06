@@ -17,6 +17,6 @@ div.timeline(*ngIf="result.length > 0")
     tr
       th Fluents
       td.timeline-fluents(*ngFor="let set of fluents; let i = index")
-        div([ngStyle]="{'height.px': overlappingFluents[i] * 22}")
+        div([ngStyle]="{'height.px': overlappingFluents[i] * 24}")
         div(*ngFor="let literal of set")
           div.timeline-fluent-box([ngStyle]="{'width.px': literal.length * 216 - 2}") {{literal.term}}
