@@ -24,6 +24,7 @@ export class HomePage implements OnInit {
     private transferState: TransferState,
     @Inject(PLATFORM_ID) private platformId: any
   ) {
+    title.setTitle('lps.js - LPS JavaScript Interpreter Demo');
   }
 
   ngOnInit() {
