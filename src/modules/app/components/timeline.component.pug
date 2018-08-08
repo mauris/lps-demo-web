@@ -2,8 +2,8 @@ div.timeline(*ngIf="result.length > 0")
   table
     tr
       th Time
-      td(*ngFor="let time of timeLabel")
-        span {{time}}
+      td(*ngFor="let time of timeLabel; let i = index")
+        span {{time}} (<small>{{durations[i]}} ms</small>)
     tr
       th Events
       td.timeline-events(*ngFor="let set of events")
