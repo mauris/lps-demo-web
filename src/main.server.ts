@@ -6,10 +6,30 @@ import { Request, Response } from 'express';
 import { ServerAppModule } from './modules/app/server-app.module';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import { enableProdMode } from '@angular/core';
+const helmet = require('helmet');
 
 enableProdMode();
 const app = express();
 const port = process.env.PORT;
+
+if (process.env.NODE_ENV === 'production') {
+  app.disable('x-powered-by');
+  app.use(helmet());
+  if (process.env.HTTPS_ENABLE_REDIRECT) {
+    app.use((req, res, next) => {
+      if (!req.secure) {
+        let destinationArray = [
+          'https://',
+          req.get('Host'),
+          req.url
+        ];
+        return res
+          .redirect(destinationArray.join(''));
+      }
+      return next();
+    });
+  }
+}
 
 app.engine('html', ngExpressEngine({
   bootstrap: ServerAppModule
