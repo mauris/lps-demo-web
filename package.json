@@ -1,7 +1,7 @@
 {
   "name": "lps-demo-web",
   "version": "1.0.0",
-  "description": "LPS Demo Demo UI",
+  "description": "LPS Demo Web App UI",
   "scripts": {
     "start": "npm run build && npm run server",
     "dev": "npm run build && concurrently \"npm run server\" \"npm run watch\"",
@@ -17,8 +17,12 @@
     "lint": "tslint ./src/**/*.ts -t verbose"
   },
   "keywords": [],
-  "author": "",
-  "license": "",
+  "author": {
+    "name": "Sam Yong",
+    "email": "samyonggit@gmail.com",
+    "url": "http://mauris.sg/"
+  },
+  "license": "BSD-3-Clause",
   "private": true,
   "engines": {
     "node": "^6.0.0"
@@ -56,6 +60,7 @@
     "file-loader": "^0.11.2",
     "font-awesome": "^4.7.0",
     "font-awesome-webpack": "0.0.5-beta.2",
+    "helmet": "^3.13.0",
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.29.0",
     "jquery": "^3.3.1",
@@ -99,5 +104,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/mauris/lps-demo-web.git"
+  },
+  "homepage": "https://github.com/mauris/lps-demo-web",
+  "bugs": {
+    "url": "https://github.com/mauris/lps-demo-web/issues"
   }
 }
