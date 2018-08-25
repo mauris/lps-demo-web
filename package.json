@@ -47,6 +47,7 @@
     "angular2-moment": "^1.9.0",
     "angular2-template-loader": "^0.6.2",
     "angulartics2": "^2.5.0",
+    "ansi-to-html": "^0.6.6",
     "awesome-typescript-loader": "^3.5.0",
     "body-parser": "^1.18.3",
     "bootstrap-sass": "^3.3.7",
