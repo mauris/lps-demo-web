@@ -8,6 +8,8 @@ import { AppComponent } from './components';
 
 import { HomePage, AboutPage } from './pages';
 
+import { AnsiHtmlPipe } from './utility';
+
 import { AppLPSTimelineComponent } from './components';
 
 import { ToastrModule } from 'ngx-toastr';
@@ -29,6 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     AppComponent,
     AppLPSTimelineComponent,
+    AnsiHtmlPipe,
     HomePage,
     AboutPage
   ]
