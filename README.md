@@ -1,6 +1,6 @@
 # lps.js Demo Web App (Front-end)
 
-This repository holds the frontend web app for the [lps.js](https://github.com/mauris/lps.js) demonstration website, made using [Angular framework](https://angular.io/). The server-side repository of the web app can be found at https://github.com/mauris/lps-demo-web-api
+This repository holds the frontend web app for the [lps.js](https://github.com/mauris/lps.js) demonstration website, made using [Angular framework](https://angular.io/) and bundled with Webpack. The server-side repository of the web app can be found at https://github.com/mauris/lps-demo-web-api
 
 ### Set up
 
